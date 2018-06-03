@@ -1,3 +1,10 @@
+/*
+    Lab work from Jim Ward's Operating Systems course, Fall 2017.
+    Base code was written by Prof. Ward. 
+    Updates by Katherine Chawla fill prompts as described in block comments.
+*/
+
+
 #include <cstdio> //needed for perror, and printf
 #include <pthread.h>
 #include <cstdlib> //needed for rand(), srand(), and exit() 
@@ -25,6 +32,7 @@ int available_resources = MAX_RESOURCES;
 Semaphore lock;
 Semaphore dec;
 Semaphore res;
+
 /*
     DECLARE SEMAPHORES GLOBALLY SO THEY ARE SHARED BY ALL THREADS
     using the semp.h implementation, semaphores can be declared as
@@ -118,7 +126,7 @@ void* application(void * id)
     //Each application instance needs to request these resources
     //and continues to do so until they get them.
     //NOTE: this is busy waiting!  Can a counting semaphore be used
-    //      instdead to avoid busy waiting?
+    //      instead to avoid busy waiting?
     //      Part 2 explores this option!
     
 
